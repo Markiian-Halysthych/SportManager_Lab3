@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+analysisdemo,ua.lviv.iot,Sort,3,123,0,18,1,24,1,12,1,3
+analysisdemo,ua.lviv.iot,Tops,13,0,0,0,7,0,4,0,4,0
+analysisdemo,ua.lviv.iot,Wear,0,27,0,0,0,13,0,8,0,8
+analysisdemo,ua.lviv.iot,Sneakers,13,0,0,0,7,0,4,0,4,0
+analysisdemo,ua.lviv.iot,WearType,0,34,0,0,0,2,0,1,0,1
+analysisdemo,ua.lviv.iot,SportWearManager,162,0,4,0,33,0,4,0,2,0
+analysisdemo,ua.lviv.iot,Trousers,10,0,0,0,5,0,3,0,3,0
+analysisdemo,ua.lviv.iot,Search,15,65,3,9,3,14,3,7,1,3
