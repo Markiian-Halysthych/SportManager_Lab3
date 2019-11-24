@@ -5,47 +5,46 @@ import org.junit.Test;
 
 public class SearchTest {
 
-	Wear wear0 = new Wear();
-	Wear example = new Wear();
-	Wear tracksuit = new Wear();
-	Wear sneakers = new Wear();
-	Wear jacket = new Wear();
-	Wear tracksuit2 = new Wear();
-	Wear jacket2 = new Wear();
-	Wear jacket3 = new Wear();
-	Wear jacket4 = new Wear();
-	Wear jacket5 = new Wear();
-	Wear jacket6 = new Wear();
+//	Wear wear0 = new Wear();
+	Trousers example = new Trousers();
+	Trousers trousers = new Trousers();
+	Sneakers sneakers = new Sneakers();
+	Tops jacket = new Tops(); 
+	Tops jacket2 = new Tops();
+	Tops jacket3 = new Tops();
+	Tops jacket4 = new Tops();
+	Tops jacket5 = new Tops();
+	Tops jacket6 = new Tops();
 
 	@Test
-	public void testSearchByPriceMucherMid() {
+	public void testSearchByPriceNegativ() {
 
-		tracksuit.setPrice(100.50);
-		sneakers.setPrice(150);
-		jacket.setPrice(200);
-		jacket2.setPrice(250);
-		jacket3.setPrice(300);
-		jacket4.setPrice(350);
-		jacket5.setPrice(400);
-		jacket6.setPrice(500);
+		trousers.setPrice(100.5);
+		sneakers.setPrice(150.5);
+		jacket.setPrice(200.5);
+		jacket2.setPrice(250.5);
+		jacket3.setPrice(300.5);
+		jacket4.setPrice(350.5);
+		jacket5.setPrice(400.5);
+		jacket6.setPrice(500.5);
 
-		Wear[] arrWearPrice = { tracksuit, sneakers, jacket, jacket2, jacket3, jacket4, jacket5, jacket6 };
+		Wear[] arrWearPrice = { trousers, sneakers, jacket, jacket2, jacket3, jacket4, jacket5, jacket6 };
 
-		Assert.assertEquals(250, Search.searchByPrice(arrWearPrice, 250), 0.2);
+		Assert.assertEquals("no wear with this price" + "the nearest price: " + 150.5, Search.searchByPrice(arrWearPrice, 120));
 	}
 
 	@Test
-	public void testSearchByPriceLesserMid() {
+	public void testSearchByPricePositiv() {
 
-		tracksuit.setPrice(100);
-		sneakers.setPrice(150);
-		jacket.setPrice(200);
-		jacket2.setPrice(300);
-		jacket3.setPrice(400);
+		trousers.setPrice(100.5);
+		sneakers.setPrice(150.5);
+		jacket.setPrice(200.5);
+		jacket2.setPrice(300.5);
+		jacket3.setPrice(400.5);
 
-		Wear[] arrWearPrice = { tracksuit, sneakers, jacket, jacket2, jacket3 };
+		Wear[] arrWearPrice = { trousers, sneakers, jacket, jacket2, jacket3 };
 
-		Assert.assertEquals(400, Search.searchByPrice(arrWearPrice, 400), 5);
+		Assert.assertEquals("searched price: " + 400.5, Search.searchByPrice(arrWearPrice, 400.5));
 	}
 
 	@Test
@@ -53,13 +52,13 @@ public class SearchTest {
 
 		example.setBrand("Adidas");
 
-		tracksuit.setBrand("Adidas");
+		trousers.setBrand("Adidas");
 		sneakers.setBrand("Nike");
 		jacket.setBrand("Reebok");
 		jacket2.setBrand("Adidas");
 		jacket3.setBrand("Nike");
 
-		Wear[] arrBrand = { tracksuit, sneakers, jacket, jacket2, jacket3 };
+		Wear[] arrBrand = { trousers, sneakers, jacket, jacket2, jacket3 };
 		String[] arrSearchBrand = { "Adidas" };
 
 		Assert.assertEquals("Adidas", Search.searchByBrand(arrBrand, arrSearchBrand));

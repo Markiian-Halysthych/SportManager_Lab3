@@ -1,20 +1,26 @@
 package ua.lviv.iot;
 
 public class Tops extends Wear {
-	private String season;
+    private String seasone;
 
-	public Tops() {
-		return;
-	}
+    public Tops() {
+    }
 
-	public Tops(WearType WearType) {
-	}
+    public String getSize() {
+        return this.seasone;
+    }
 
-	public String getSeason() {
-		return this.season;
-	}
+    public void setSeasone(String seasone) {
+        this.seasone = seasone;
+    }
+    
+    @Override
+    public String toString() {
+        return super.toString() + ", seasone = " + seasone + ")";
+    }
 
-	public void setSeason(String season) {
-		this.season = season;
-	}
+    @Override
+    public String getType() {
+        return "Tops";
+    }
 }

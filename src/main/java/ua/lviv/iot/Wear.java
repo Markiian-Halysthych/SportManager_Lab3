@@ -1,16 +1,23 @@
 package ua.lviv.iot;
 
-public class Wear {
-	private String brand;
-	private double price;
-	private double percentageOfCotton;
+public abstract class Wear {
 
-	public Wear(WearType WearType) {
+	private Long id;
+	private static String brand;
+	private static double price;
+	private static double percentageOfCotton;
+	private static WearType wearType;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getBrand() {
-		return this.brand;
+		return brand;
 	}
 
 	public void setBrand(String brand) {
@@ -19,10 +26,6 @@ public class Wear {
 
 	public double getPrice() {
 		return price;
-	}
-
-	public Wear() {
-		return;
 	}
 
 	public void setPrice(double price) {
@@ -35,6 +38,30 @@ public class Wear {
 
 	public void setPercentageOfCotton(double percentageOfCotton) {
 		this.percentageOfCotton = percentageOfCotton;
+	}
+
+	public WearType getWearType() {
+		return wearType;
+	}
+
+	public void setWearType(WearType wearType) {
+		this.wearType = wearType;
+	}
+
+	public abstract String getType();
+
+	@Override
+	public String toString() {
+		return getType() + "(" + ", brand = " + brand + ", price = " + price + ", cotton = " + percentageOfCotton
+				+ ", type = " + wearType;
+	}
+
+	public static String getHeaders() {
+		return "Brand, Price, Cotton, Type";
+	}
+
+	public static String toCSV() {
+		return brand + ", " + price + ", " + percentageOfCotton + ", " + wearType;
 	}
 
 }

@@ -65,7 +65,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ua.lviv.iot.SearchTest" name="testSearchByPriceLesserMid" time="0.009"/>
-  <testcase classname="ua.lviv.iot.SearchTest" name="testSearchByBrand" time="0"/>
-  <testcase classname="ua.lviv.iot.SearchTest" name="testSearchByPriceMucherMid" time="0"/>
+  <testcase classname="ua.lviv.iot.SearchTest" name="testSearchByBrand" time="0.007"/>
+  <testcase classname="ua.lviv.iot.SearchTest" name="testSearchByPriceNegativ" time="0.002"/>
+  <testcase classname="ua.lviv.iot.SearchTest" name="testSearchByPricePositiv" time="0"/>
 </testsuite>

@@ -5,21 +5,21 @@ import org.junit.Test;
 
 public class SortTest {
 
-	Wear wear0 = new Wear();
-	Wear example = new Wear();
-	Wear tracksuit = new Wear(WearType.TRACKSUIT);
-	Wear sneakers = new Wear(WearType.SNEAKERS);
-	Wear jacket = new Wear(WearType.JACKET);
+//	Wear wear0 = new Wear();
+	Tops example = new Tops();
+	Trousers trousers = new Trousers();
+	Sneakers sneakers = new Sneakers();
+	Tops jacket = new Tops();
 
 	@Test
 	public void testSortByPrice() {
 
-		tracksuit.setPrice(100);
+		trousers.setPrice(100);
 		sneakers.setPrice(200);
 		jacket.setPrice(150);
 
-		Wear[] arrWearPrice = { tracksuit, sneakers, jacket };
-		Wear[] expected = { tracksuit, jacket, sneakers };
+		Wear[] arrWearPrice = { trousers, sneakers, jacket };
+		Wear[] expected = { trousers, jacket, sneakers };
 
 		Sort.sortByPrice(arrWearPrice);
 
@@ -29,12 +29,12 @@ public class SortTest {
 	@Test
 	public void testSortByPercentageOfCotton() {
 
-		tracksuit.setPercentageOfCotton(30);
+		trousers.setPercentageOfCotton(30);
 		sneakers.setPercentageOfCotton(13.12);
 		jacket.setPercentageOfCotton(70.5);
 
-		Wear[] arrWearCotton = { tracksuit, sneakers, jacket };
-		Wear[] expected = { sneakers, tracksuit, jacket };
+		Wear[] arrWearCotton = { trousers, sneakers, jacket };
+		Wear[] expected = { sneakers, trousers, jacket };
 
 		Sort.sortByPercentageOfCotton(arrWearCotton);
 
@@ -44,12 +44,12 @@ public class SortTest {
 	@Test
 	public void testSortByPercentageOfCottonUp() {
 
-		tracksuit.setPercentageOfCotton(30);
+		trousers.setPercentageOfCotton(30);
 		sneakers.setPercentageOfCotton(13.12);
 		jacket.setPercentageOfCotton(70.5);
 
-		Wear[] arrWearCottonUp = { tracksuit, sneakers, jacket };
-		Wear[] expected = { jacket, tracksuit, sneakers };
+		Wear[] arrWearCottonUp = { trousers, sneakers, jacket };
+		Wear[] expected = { jacket, trousers, sneakers };
 
 		Sort.sortByPercentageOfCottonUp(arrWearCottonUp);
 

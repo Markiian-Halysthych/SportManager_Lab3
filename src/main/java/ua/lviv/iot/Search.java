@@ -2,26 +2,28 @@ package ua.lviv.iot;
 
 public class Search {
 
-	private static boolean toggles = true;
-
-	public static double searchByPrice(Wear[] arrWearPrice, double search) {
+	public static String searchByPrice(Wear[] arrWearPrice, double search) {
+		StringBuilder result = new StringBuilder();
+		
+		boolean toggles = true;
 		int start = 0;
-		int end = arrWearPrice.length - 1;
-		int mid = (start + end) / 2;
+		int end = arrWearPrice.length;
 		while (toggles) {
-			if (arrWearPrice[mid].getPrice() == search) {
+			if (arrWearPrice[start].getPrice() == search) {
+				result.append("searched price: ");
 				toggles = false;
 			} else {
-				if (arrWearPrice[mid].getPrice() < search) {
-					mid = mid + 1;
-				} else {
-					if (arrWearPrice[mid].getPrice() > search) {
-						mid = mid - 1;
-					}
+				start = start + 1;
+			}
+			{
+				if (arrWearPrice[start].getPrice() > search) {
+					result.append("no wear with this price");
+					result.append("the nearest price: ");
+					toggles = false;
 				}
 			}
 		}
-		return arrWearPrice[mid].getPrice();
+		return result.toString() + arrWearPrice[start].getPrice();
 	}
 
 	public static String searchByBrand(Wear[] arrBrand, String[] arrSearchBrand) {
